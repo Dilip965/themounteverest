@@ -36,6 +36,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from bubbling up
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Close mobile menu when window is resized to desktop view
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) { // 768px is the md breakpoint in Tailwind
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+});
+
 // Header scroll effect
 const header = document.querySelector('header');
 let lastScroll = 0;
@@ -58,28 +94,4 @@ window.addEventListener('scroll', () => {
         header.classList.add('scroll-up');
     }
     lastScroll = currentScroll;
-});
-
-// Mobile menu toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-            mobileMenu.classList.add('hidden');
-        }
-    });
-
-    // Close mobile menu when window is resized to desktop view
-    window.addEventListener('resize', function() {
-        if (window.innerWidth >= 768) { // 768px is the md breakpoint in Tailwind
-            mobileMenu.classList.add('hidden');
-        }
-    });
 }); 
