@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Mount Everest Enterprises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Remove old styles that might conflict with Tailwind */
+        /* .reviews-hero { */
+        /*     height: 40vh; */
+        /*     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('photo/WhatsApp\ Image\ 2025-05-27\ at\ 9.46.48\ PM.jpeg'); */
+        /*     background-size: cover; */
+        /*     background-position: center; */
+        /*     display: flex; */
+        /*     align-items: center; */
+        /*     justify-content: center; */
+        /*     text-align: center; */
+        /*     color: #fff; */
+        /*     margin-top: 80px; */
+        /* } */
+
+        /* .reviews-content { */
+        /*     padding: 5rem 1rem; */
+        /*     max-width: 1200px; */
+        /*     margin: 0 auto; */
+        /* } */
+
+        /* .reviews-grid { */
+        /*     display: grid; */
+        /*     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+        /*     gap: 2rem; */
+        /*     margin-top: 3rem; */
+        /* } */
+
+        /* .review-card { */
+        /*     background-color: #fff; */
+        /*     padding: 2rem; */
+        /*     border-radius: 10px; */
+        /*     box-shadow: 0 3px 10px rgba(0,0,0,0.1); */
+        /* } */
+
+        /* .review-header { */
+        /*     display: flex; */
+        /*     align-items: center; */
+        /*     margin-bottom: 1rem; */
+        /* } */
+
+        /* .reviewer-image { */
+        /*     width: 60px; */
+        /*     height: 60px; */
+        /*     border-radius: 50%; */
+        /*     margin-right: 1rem; */
+        /*     object-fit: cover; */
+        /* } */
+
+        /* .reviewer-info h3 { */
+        /*     margin: 0; */
+        /*     color: #2c3e50; */
+        /* } */
+
+        /* .reviewer-info p { */
+        /*     margin: 0; */
+        /*     color: #666; */
+        /*     font-size: 0.9rem; */
+        /* } */
+
+        /* .rating { */
+        /*     color: #f1c40f; */
+        /*     margin: 1rem 0; */
+        /* } */
+
+        /* .review-text { */
+        /*     line-height: 1.6; */
+        /*     color: #333; */
+        /* } */
+
+        /* .add-review { */
+        /*     text-align: center; */
+        /*     margin-top: 4rem; */
+        /* } */
+
+        /* .add-review-button { */
+        /*     display: inline-block; */
+        /*     padding: 1rem 2rem; */
+        /*     background-color: #e74c3c; */
+        /*     color: #fff; */
+        /*     text-decoration: none; */
+        /*     border-radius: 5px; */
+        /*     transition: background-color 0.3s ease; */
+        /* } */
+
+        /* .add-review-button:hover { */
+        /*     background-color: #c0392b; */
+        /* } */
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-yellow-900 via-yellow-700 to-yellow-600 shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="photo/logo.png" alt="Mount Everest Enterprises Logo" class="h-14 w-14 rounded-full bg-white p-1 shadow-lg border-4 border-yellow-800 object-cover">
+                    <h1 class="text-xl font-bold text-yellow-100 hidden md:block tracking-wide">Mount Everest Enterprises</h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-200 hover:text-white transition">Home</a>
+                    <a href="about.html" class="text-gray-200 hover:text-white transition">About</a>
+                    <a href="review.html" class="text-white font-semibold">Reviews</a>
+                    <a href="gallery.html" class="text-gray-200 hover:text-white transition">Gallery</a>
+                    <a href="contact.html" class="text-gray-200 hover:text-white transition">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-yellow-100 hover:text-white focus:outline-none" id="mobile-menu-button">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4 mt-4 pb-4">
+                     <a href="index.html" class="text-gray-200 hover:text-white transition">Home</a>
+                    <a href="about.html" class="text-gray-200 hover:text-white transition">About</a>
+                    <a href="review.html" class="text-white font-semibold">Reviews</a>
+                    <a href="gallery.html" class="text-gray-200 hover:text-white transition">Gallery</a>
+                    <a href="contact.html" class="text-gray-200 hover:text-white transition">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Add margin-top to account for fixed header -->
+    <div class="mt-20">
+    <!-- Reviews Hero Section -->
+    <section class="relative h-screen-40 bg-cover bg-center flex items-center justify-center text-center text-white" style="background-image: url('photo/WhatsApp\ Image\ 2025-05-27\ at\ 9.46.48\ PM.jpeg');">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Customer Reviews</h1>
+            <p class="text-xl md:text-2xl">What Our Clients Say About Us</p>
+        </div>
+    </section>
+
+    <!-- Reviews Content -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">Customer Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="photo/43f486cb-7a3d-4140-b4e1-d937b5978d2f.jpg" alt="Reviewer" class="w-16 h-16 rounded-full mr-4 object-cover">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">John Doe</h3>
+                            <p class="text-gray-600 text-sm">Construction Manager</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">"Mount Everest Enterprises has been our trusted supplier for years. Their quality of materials and timely delivery have never disappointed us. Highly recommended!"</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="photo/WhatsApp Image 2025-05-27 at 9.43.44 PM.jpeg" alt="Reviewer" class="w-16 h-16 rounded-full mr-4 object-cover">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Jane Smith</h3>
+                            <p class="text-gray-600 text-sm">Project Developer</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">"The team at Mount Everest Enterprises is professional and knowledgeable. They helped us choose the right materials for our project and delivered everything on time."</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="photo/WhatsApp Image 2025-05-27 at 9.46.49 PM.jpeg" alt="Reviewer" class="w-16 h-16 rounded-full mr-4 object-cover">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Mike Johnson</h3>
+                            <p class="text-gray-600 text-sm">Architect</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">"I've worked with many suppliers, but Mount Everest Enterprises stands out for their quality and service. They understand the importance of quality materials in construction."</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="contact.html" class="inline-block bg-yellow-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-800 transition duration-300">Share Your Experience</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                    <p class="flex items-center space-x-3">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 62061 71445</span>
+                    </p>
+                    <p class="flex items-center space-x-3">
+                        <i class="fas fa-envelope"></i>
+                        <span>murari2521992@gmail.com</span>
+                    </p>
+                    <p class="flex items-center space-x-3">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Patna Bihar</span>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-yellow-400 transition">About Us</a></li>
+                        <li><a href="review.html" class="hover:text-yellow-400 transition">Reviews</a></li>
+                        <li><a href="gallery.html" class="hover:text-yellow-400 transition">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-yellow-400 transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-yellow-400 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-yellow-400 transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p>&copy; 2024 Mount Everest Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Buttons -->
+    <div class="fixed bottom-6 right-6 flex flex-col space-y-4">
+        <a href="https://wa.me/916206171445" class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition" target="_blank">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+        <a href="tel:+916206171445" class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition">
+            <i class="fas fa-phone text-2xl"></i>
+        </a>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Lightbox functionality - Keep if needed for Reviews page, otherwise remove
+        // const lightbox = document.querySelector('.lightbox');
+        // const lightboxImg = lightbox.querySelector('img');
+        // const lightboxClose = lightbox.querySelector('.lightbox-close');
+        // const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+        // const lightboxNext = lightbox.querySelector('.lightbox-next');
+        // const galleryItems = document.querySelectorAll('.gallery-item');
+        // let currentImageIndex = 0;
+
+        // galleryItems.forEach((item, index) => {
+        //     item.addEventListener('click', () => {
+        //         currentImageIndex = index;
+        //         openLightbox(item.dataset.image);
+        //     });
+        // });
+
+        // function openLightbox(imageSrc) {
+        //     lightboxImg.src = imageSrc;
+        //     lightbox.style.display = 'block';
+        //     document.body.style.overflow = 'hidden';
+        // }
+
+        // function closeLightbox() {
+        //     lightbox.style.display = 'none';
+        //     document.body.style.overflow = 'auto';
+        // }
+
+        // function showPrevImage() {
+        //     currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+        //     lightboxImg.src = galleryItems[currentImageIndex].dataset.image;
+        // }
+
+        // function showNextImage() {
+        //     currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+        //     lightboxImg.src = galleryItems[currentImageIndex].dataset.image;
+        // }
+
+        // lightboxClose.addEventListener('click', closeLightbox);
+        // lightboxPrev.addEventListener('click', showPrevImage);
+        // lightboxNext.addEventListener('click', showNextImage);
+
+        // lightbox.addEventListener('click', (e) => {
+        //     if (e.target === lightbox) {
+        //         closeLightbox();
+        //     }
+        // });
+
+        // document.addEventListener('keydown', (e) => {
+        //     if (lightbox.style.display === 'block') {
+        //         if (e.key === 'Escape') closeLightbox();
+        //         if (e.key === 'ArrowLeft') showPrevImage();
+        //         if (e.key === 'ArrowRight') showNextImage();
+        //     }
+        // }
+    </script>
+    </div>
+</body>
+</html> 
